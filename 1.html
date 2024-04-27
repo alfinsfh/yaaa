@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Flip Item</title>
+<style>
+  .flip-container {
+    perspective: 1000px;
+    padding: 20px;
+  }
+
+  .flipper {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(0deg);
+  }
+
+  .front, .back {
+    backface-visibility: hidden;
+    padding: 20px;
+
+  }
+
+  .front {
+    background: #3498db;
+    color: white;
+
+  }
+
+  .back {
+    background: #e74c3c;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .flip-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="flip-container">
+  <div class="flipper">
+    <div class="front">
+      <div class="centered">
+        Front Side
+      </div>
+    </div>
+    <div class="back">
+      <div class="centered">
+        Back Side
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flip-button">
+  <button onclick="flip()">Flip</button>
+</div>
+
+<script>
+  var isFlipped = false;
+
+  function flip() {
+    var flipper = document.querySelector('.flipper');
+    if (!isFlipped) {
+      flipper.style.transform = 'rotateY(180deg)';
+      isFlipped = true;
+    } else {
+      flipper.style.transform = 'rotateY(0deg)';
+      isFlipped = false;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1338 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Purple+Purse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Oi&family=Purple+Purse&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Menghilangkan efek tap biru pada elemen yang mendapatkan fokus */
+body:focus {
+  outline: none;
+}
+
+
+
+:root {
+  --gold-color: #FACA78;
+  --dark-bg: #faf6e7 --medium-bg: #794A3A;
+  --light-bg: #e5e5e5;
+  --grey-text: #794A3A;
+  --white: #794A3A;
+}
+
+/* CSS untuk Dark UI Aplikasi Restoran Elegan dengan Warna Emas */
+
+body {
+  color: #000;
+  font-family: Open Sans, Helvetica, sans-serif;
+  background-color: #ffff;
+  outline: none; /* Menghilangkan efek focus ring saat tombol dalam fokus */
+}
+
+
+
+.container {
+  margin: 0 auto;
+  background-color: var(--dark-bg);
+  opacity: 0.8;
+  min-height: 150vh;
+  height: auto;
+  overflow: hidden;
+}
+
+.greeting-container h1 {
+  font-family: "Lobster Two", sans-serif;
+  font-size: 50px;
+  background: #fff;
+  background-image: radial-gradient(at 85.4% 36.8%, hsl(348, 61%, 77%) 0px, transparent 50%), radial-gradient(at 22.6% 78.0%, hsl(198, 54%, 74%) 0px, transparent 50%), radial-gradient(at 20.0% 27.8%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 73.7% 85.9%, hsl(43, 90%, 75%) 0px, transparent 50%), radial-gradient(at 41.8% 55.2%, hsl(43, 90%, 75%) 0px, transparent 50%)
+}
+
+.grad-container {}
+
+.grad {
+  background-color: #f9d997;
+  max-width: 480px;
+}
+
+
+.record {
+  position: relative;
+  bottom: 250px;
+  width: 100%;
+  animation: spin 4s linear infinite;
+}
+
+.circle-text {
+  text-align: center;
+  position: relative;
+  top: -25em;
+  margin-bottom: -20em;
+  padding: 0px 10px;
+}
+
+.circle-text span {
+  font-family: "Oi", serif;
+  font-size: 30px;
+  color: #faf6e7;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-fill-color: #e43d31;
+}
+
+.circle-text p {
+  -webkit-text-fill-color: #e43d31;
+  font-family: "Coiny", system-ui;
+}
+
+/* Gaya umum untuk kontainer pencarian */
+.header-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #faf6e7;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  max-width: 480px;
+}
+
+
+.header-left,
+.header-right {
+  font-size: 24px;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 3px 10px;
+}
+
+.header-center {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-center img {
+  max-width: 50px;
+}
+
+.search-category-container {
+  display: inline-flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.search {
+  display: inline-flex;
+  margin-right: 10px;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.search-form {
+  display: inline-flex;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  background-color: #faf6e7;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  font-family: "Coiny", system-ui;
+  text-transform: uppercase;
+}
+
+.category-filter {
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  font-family: "Coiny", system-ui;
+  text-transform: uppercase;
+}
+
+.recommendations-container {
+  background-color: #68C7C1;
+}
+
+.recommendations {
+  text-align: left;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: var(--white);
+  max-height: 200px;
+  background-color: #faf6e7;
+  z-index: 1;
+  display: none;
+  overflow-y: scroll;
+  border: 1px solid #000;
+}
+
+.recommendations li:hover {
+  background-color: #fa7634;
+}
+
+.recommendations li {
+  display: flex;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0.5px solid #000;
+  text-align: left;
+}
+
+.recommendations li:hover {
+  background-color: var();
+}
+
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  position: relative;
+}
+
+.product-item {
+  text-align: center;
+  border: 1px solid #000;
+  background-color: #faf6e7;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+
+
+/* Styles for the product card */
+
+.product-card {}
+
+.shape-star {
+  background-color: #e89fae;
+  color: #000;
+  border: 1px solid #000;
+  position: relative;
+  margin: 0px;
+  padding: 5px 30px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Coiny", system-ui;
+  left: 80px;
+  border-radius: 5px;
+}
+
+.product-image {
+  max-width: 100%;
+  width: 100%;
+  width: 150px;
+  height: 180px;
+  flex-shrink: 0;
+  margin-bottom: 5px;
+  object-fit: cover;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  border: 3px solid #000;
+  filter: grayscale(0%);
+}
+
+.product-image:hover {
+  filter: grayscale(0%);
+  
+}
+
+.product-nama {
+  font-size: 20px;
+  margin: 0;
+  color: #000;
+  text-align: left;
+  line-height: 1.4;
+  font-family: "Coiny", system-ui;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 5px;
+  font-family: "Coiny", system-ui;
+  color: #000;
+}
+
+.product-info span {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  color: var(--gold-color);
+  /* Warna ikon bintang */
+  margin-right: 5px;
+}
+
+.clock-icon {
+  color: var(--gold-color);
+  /* Warna ikon jam */
+  margin-right: 5px;
+}
+
+.container-details {
+  overflow: hidden;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 999999999;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  background-color: var(--dark-bg);
+  /* Untuk menempatkan di tengah secara horizontal */
+}
+
+
+
+
+
+/* Animasi ketika hover pada bagian detail */
+.student-details-section:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .student-details-section {
+    flex: 1 1 100%;
+    /* Full width on small screens */
+  }
+}
+
+
+.header img {
+  width: 30px;
+
+  float: left;
+}
+
+.header p {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+
+
+
+.header-details {
+  background-color: #99aaaa;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.header-details .left {
+  flex: 1;
+  text-align: left;
+  text-decoration: none;
+}
+
+.header-details .right {
+  flex: 1;
+  text-align: right;
+}
+
+.header-details a {
+  text-decoration: none;
+  color: #000;
+  background-color: #e89fae;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.header-details .right a:last-child {
+  margin-left: 0;
+}
+
+.product-details-new {
+  background-color: #99aaaa;
+  padding-bottom: 4rem;
+}
+
+
+.product-details-new:before {}
+
+
+
+
+
+
+
+.product-container {
+  display: flex;
+  /* Horizontal layout */
+  overflow-x: auto;
+}
+
+.container h1 {
+  font-size: 17px;
+  margin-left: 10px;
+  color: var(--white);
+}
+
+
+.product-card-ctg {
+
+  width: 250px;
+  /* Atur lebar kartu sesuai kebutuhan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.product-image-ctg {
+  max-width: 100%;
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-nama-ctg {
+  margin-top: 8px;
+  font-size: 17px;
+  color: var(--white);
+}
+
+.product-info-ctg {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--grey-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Jumlah baris maksimum */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.product-container::-webkit-scrollbar {
+  width: 20px;
+}
+
+.product-card-ctg::-webkit-scrollbar-track {
+  background-color: var(--dark-bg);
+}
+
+.product-ctg::-webkit-scrollbar-thumb {
+  background-color: var(--dark-bg);
+  border-radius: 5px;
+}
+
+/* Gaya untuk elemen ".section-category" */
+.section-category-beef,
+.section-category-kategori1 {
+  margin-bottom: 20px;
+}
+
+/* Gaya untuk elemen ".title-container" */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  /* Mengatur elemen pada ujung kiri dan kanan */
+  align-items: center;
+  /* Mengatur elemen secara vertikal berada di tengah */
+}
+
+/* Gaya untuk elemen "See All" */
+.see-all {
+  font-size: 14px;
+  color: var(--gold-color);
+  margin-right: 10px;
+}
+
+
+
+
+#tabs {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #faf6e7;
+  display: flex;
+  justify-content: space-around;
+  z-index: 999;
+  padding: 10px;
+  max-width: 480px;
+}
+
+.tab {
+  color: #777;
+  text-align: center;
+  padding: 5px;
+  min-width: 150px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #faf6e7;
+  border: 2px solid #000000;
+}
+
+.tab i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.tab i.active {
+  background-color: #68C7C1;
+}
+
+
+.tab.active {
+  color: #faf6e7;
+  background-color: #fa7634;
+  position: relative;
+}
+
+
+
+
+
+/* Styling for the alternate product list */
+#alternateProductList {
+  margin: 20px;
+}
+
+/* Styling for each individual product item */
+.alternate-product-item {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Styling for the product card within each item */
+.alternate-product-card {
+  text-align: left;
+  margin-top: auto;
+  border-radius: 5px;
+  width: 100%;
+  height: 362px;
+  padding: 1em;
+  color: #000;
+  font-size: 16px;
+  background-size: 51% 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 0%, rgba(255, 255, 224, 0) 19px, #f3f1c9 20px), radial-gradient(circle at 100% 60%, rgba(255, 255, 224, 0) 19px, #f3f1c9 20px);
+  background-position: top left, top right;
+}
+
+/* Styling for the product image */
+.alternate-product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #333333;
+}
+
+/* Styling for the product details */
+.alternate-product-details {
+  order: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Styling for the product nama */
+.alternate-product-nama {
+  font-size: 17px;
+  color: var(--white);
+  margin: 0;
+  font: 900 10px/1 'Old Standard TT';
+}
+
+.alternate-product-dit {
+  position: relative;
+  z-index: 1;
+  top: -50px
+}
+
+.alternate-product-category {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--white);
+  padding: 8px 15px;
+  position: relative;
+  z-index: 1;
+  top: -50px;
+  right: -10px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.241);
+  backdrop-filter: blur(5px);
+}
+
+/* Styling for the product price */
+.alternate-product-info {
+  font-size: 15px;
+  color: var(--grey-text);
+  margin: 5px 0;
+}
+
+.memories-album-container {
+  background-color: #faf6e7;
+  width: 100%;
+}
+
+.memories-album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.memories-album h1 {
+  font-family: "Oi", serif;
+  font-size: 30px;
+  color: #faf6e7;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #E02F2C;
+  -webkit-text-fill-color: #e89fae;
+}
+
+#categoryButtons {
+  margin: 10px 20px;
+}
+
+.category-button {
+  font-family: "Coiny", system-ui;
+  margin: 5px;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #e89fae;
+}
+
+.category-button.active {
+  background-color: #E02F2C;
+}
+
+#home {
+  min-height: 200vh;
+}
+
+#categories, #favorites {
+  background-color: #99aaaa;
+  min-height: 200vh;
+}
+
+
+.memories-search-container {
+
+
+  margin-bottom: 20px;
+  margin: 20px;
+}
+
+.memories-search {
+  width: 100%;
+  padding: 10px;
+  
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #faf6e7;
+}
+
+.social-icon {
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 5px;
+  border: 1px solid #000;
+  border-radius: 50px;
+
+}
+
+.social-icon i {
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s ease;
+  padding: 10px 10px;
+}
+
+.social-icon:hover i {
+  color: #e89fae;
+}
+
+/* Gaya untuk daftar album */
+#albumList {
+  margin: 20px;
+}
+
+.album-item {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-item-container {
+  margin-top: 10px;
+  text-align: left;
+  border-radius: 5px;
+  width: 100%;
+  height: 362px;
+  padding: 1em;
+  color: #000;
+  font-size: 16px;
+  background-size: 51% 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 0%, rgba(255, 255, 224, 0) 19px, #faf6e7 20px), radial-gradient(circle at 100% 60%, rgba(255, 255, 224, 0) 19px, #faf6e7 20px);
+  background-position: top left, top right;
+}
+
+.album-item:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.album-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-family: "Coiny", system-ui;
+  border: none;
+}
+
+.album-artist {
+  font-size: 14px;
+  color: #666;
+    font-family: "Coiny", system-ui;
+}
+
+.album-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #333333;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  filter: saturate(0);
+}
+
+.album-cover:hover {
+  filter: saturate(100%);
+}
+
+.album-crit {
+  background-color: #e89fae;
+  color: #fff;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 3px dotted #000;
+}
+
+/* Gaya untuk detail album */
+#albumDetails {
+  margin-top: 20px;
+}
+
+.album-details-container {
+  position: fixed;
+  max-width: 480px;
+  background-color: #faf6e7;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 99999;
+  overflow-y: scroll;
+}
+
+.album-details-button a {
+  padding: 10px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #e89fae;
+  font-size: 15px;
+}
+
+.album-details-button {
+  margin: 50px 20px;
+}
+
+
+.album-details {
+  margin: 20px;
+  padding: 20px;
+  background-color: #faf6e7;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.album-details-title {
+  font-size: 24px;
+  text-align: left;
+  font-family: "Coiny", system-ui;
+  border-radius: 5px;
+  color: #000000;
+}
+
+.album-details-artist {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.album-details-description,
+.album-details-tanggal {
+  font-size: 16px;
+  margin-bottom: 5px;
+  background-color: #E02F2C;
+  color: #fff;
+  display: inline-block;
+}
+
+.album-details-cover {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 20px;
+  object-fit: cover;
+  height: 200px;
+  border: 1px solid #000;
+}
+
+#onboarding-container {
+ 
+}
+.onboarding-content {
+  display: none;
+  position: fixed;
+  z-index: 99999999999999999;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  max-width: 480px;
+  background-color: #faf6e7;
+}
+
+.page-container {
+  padding: 20px;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page h1, .page h2 {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.page img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.page .content {
+  margin-bottom: 20px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prev-btn, .next-btn, .close-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.prev-btn:hover, .next-btn:hover, .close-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+.quote-container {
+  position: relative;
+  width: 100%;
+  padding: 30px 20px;
+}
+
+.bubble-chat {
+  position: relative;
+  margin: 10px;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #68C7C1;
+  animation: bubbleChat 5s ease infinite;
+  border: 3px dotted #000;
+  border-radius: 5px;
+  align-items: center;
+  font-family: "Coiny", system-ui;
+  justify-content: center;
+}
+
+.bubble-chat img {
+  width: 40px;
+  height: 40px;
+  float: left;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+  object-fit: cover;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+article {
+  margin: 0 20px;
+  display: flex;
+  flex-flow: column;
+  background-color: #faf6e7;
+  clip-path: polygon(15% 0, 85% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+  padding: 0px 20px;
+  border-bottom: 3px dotted #000000;
+}
+
+
+
+.container-code {
+  background-color: #faf6e7;
+  margin: 0 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.button-container {
+  display: flex;
+  /* Menggunakan flexbox untuk menyusun tombol secara horizontal */
+}
+
+.button {
+  padding: 10px 50px;
+  /* Padding agar tombol terlihat lebih baik */
+  /* Jarak antara tombol */
+  margin: 20px;
+  background-color: #e89fae;
+  border: 1px solid #000;
+  color: #000;
+  /* Warna teks */
+  border-radius: 5px;
+  /* Membuat sudut tombol melengkung */
+  cursor: pointer;
+  /* Mengubah kursor saat diarahkan ke tombol */
+}
+
+.button:hover {
+  opacity: 90%;
+}
+
+.row h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #000000;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.row h1 {
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-family: 'Squada One', cursive;
+  color: #E02F2C;
+}
+
+.row h4 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #E02F2C;
+  text-transform: uppercase;
+  font-family: 'Squada One', cursive;
+  margin-top: 10px;
+}
+
+.row p,
+li {
+  color: #000;
+  margin-right: 10px;
+  list-style: none;
+  font-size: 12px;
+}
+
+.row li {
+  list-style: circle;
+  margin-left: 15px;
+}
+
+.row img {
+  width: 100%;
+}
+
+.top {
+  margin-bottom: 2rem;
+}
+
+.top .row .block {
+  flex-grow: 1;
+}
+
+.block img {
+  display: block;
+  margin: auto;
+}
+
+.top .block p {
+  color: #E02F2C;
+  font-size: 2rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.top p {
+  text-transform: uppercase;
+  font-size: .75rem;
+  text-align: center;
+  align-self: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #343E6F;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+}
+
+.top img {
+  width: 72px;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+.main h3 {
+  font-size: 20px;
+  text-align: left;
+  padding: 10px;
+  font-family: "Coiny", system-ui;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+
+.container-row {
+  display: flex;
+  justify-content: flex-end;
+  /* Mengubah dari space-around menjadi flex-start */
+  text-align: left;
+  padding: 10px;
+  border-top: 1px solid #000;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.image-det img {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.center {
+  display: flex;
+}
+
+.numbers {
+  font-family: 'Rozha One', serif;
+  color: #7B1E17;
+  font-size: 15px;
+  position: relative;
+  margin: auto;
+}
+
+sup {
+  position: relative;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.marks {
+  font-family: 'Kristi', cursive;
+  font-size: 4.5rem;
+  color: rgba(0, 0, 0, .4);
+
+}
+
+/* CSS untuk popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+
+.concert-ticket {
+  background-color: #faf6e7;
+  width: 300px;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  border: 4px solid #000000; /* warna border retro */
+  position: relative;
+}
+
+.ticket-header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-top: 1px solid #000;
+  padding-top: 15px;
+  font-family: "Oi", serif;
+  font-size: 30px;
+  color: #faf6e7;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #E02F2C;
+  -webkit-text-fill-color: #e89fae;
+}
+
+.ticket-header h2 {
+  color: #4d4d4d;
+  font-size: 24px;
+  margin: 0;
+}
+
+.ticket-header b {
+  background-color: #E02F2C;
+  color: #f2f2f2;
+}
+
+
+
+
+
+.logot {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logot img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #000;
+  border-radius: 50px;
+}
+
+.barcodee {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.barcodee img {
+  width: 100%;
+
+  height: auto;
+}
+
+.ticket-nick h1{
+  font-size: 20px;
+  margin-top: 20px;
+  font-family: 'Squada One', cursive;
+}
+.ticket-desk p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+#imageList {
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#imageList img {
+  width: 50px;
+}
+
+#imageListPopup {
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 20px 0px;
+  width: 100%;
+}
+
+#imageListPopup img {
+  width: 40px;
+}
+
+.zodiac-icon-container img{
+  width: 50px;
+  background-color: #fa7634;
+  padding: 5px;
+  border-radius: 50px 50px;
+}
+
+
+
+
+@keyframes bubbleChat {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  10%,
+  90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+
+
+@media screen and (min-width: 500px) {
+  .container {
+    max-width: 480px;
+  }
+
+  .container-details {
+    max-width: 480px;
+    /* Tambahkan max-width di sini */
+  }
+
+  #tabs {
+    max-width: 480px;
+    margin: 0 auto;
+    /* Membuat container berada di tengah halaman */
+    background-color: #faf6e7;
+    display: flex;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .record {
+    position: relative;
+    bottom: 220px;
+    width: 100%;
+  }
+
+  .circle-text {
+    text-align: center;
+    position: relative;
+    top: -20em;
+    z-index: 20;
+    margin-bottom: -20em;
+  }
+}
